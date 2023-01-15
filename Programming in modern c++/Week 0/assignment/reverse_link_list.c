@@ -39,7 +39,6 @@ void reverse_display(NODE first){
 int main(){
     int n, item, i;
     NODE first, cur;
-    printf("running....");
     first = (NODE)malloc(sizeof(struct node));
 	first = NULL;
 	
