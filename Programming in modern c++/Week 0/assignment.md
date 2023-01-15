@@ -3,6 +3,7 @@
 
 ### 1. 
 ![A1](./img/a0q1.jpg)
+
 Output: 
 ```
 120 5.00
@@ -44,6 +45,7 @@ So result is 010 | 100 = 110 (6)
 ---
 ### 3. 
 ![A3](./img/a0q3.jpg)
+
 Output: 
 ```
 Case label does not reduce to an integer constant.
@@ -58,6 +60,7 @@ In switch statement, every case statement ust contains a constant value such as 
 
 ### 4. 
 ![A4](./img/a0q4.jpg)
+
 Output:
 ```
 ITGGTI
@@ -98,12 +101,9 @@ void push1(){
 ### 6.
 ![A6](./img/a0q6.jpg)
 
-Output 
-```
-```
->answer:
+>answer: `b`
 
-Solution
+Solution: This function appears to take a pointer to a Queue data structure as its parameter, and it uses that Queue to reverse the order of the elements within it. It creates a Stack data structure called "Stk", and then uses a while loop to dequeue elements from the Queue and push them onto the Stack, until the Queue is empty. Then, it uses another while loop to pop elements from the Stack and enqueue them back into the original Queue, reversing their order. The function is using two helper functions "isEmpty" and "pop" which are not defined here but it can be assumed that these functions check if the data structure is empty or pop out an element from a stack.
 
 ---
 ### 7.
@@ -211,10 +211,27 @@ This line of code defines a new type called "F_PTR" which is a pointer to a func
 
 Output
 ```
+50 40 30 20 10
 ```
->answer: 
+>answer: `b`
 
-Solution: 
+Solution: So consider below program, 
+```c 
+#include<stdio.h>
+
+
+int main(int argc, char const *argv[])
+{
+    int array[] = {10, 20, 30, 40, 50};
+    int *ip, i;
+
+    for(ip = array+4, i=0; i<5; i++)
+        printf("%d ", ip[-i]);
+    return 0;
+}
+```
+This program creates an array of integers called "array" with the values {10, 20, 30, 40, 50}. It then creates a pointer to an integer called "ip" and sets it to point to the last element of the array. Then, it uses a for loop to print out the values of the array starting from the last element and going in reverse order by using the pointer "ip" and negative indexing. The program will print the numbers 50, 40, 30, 20, 10 each on a new line.
+
 
 ---
 ### 13.
@@ -222,10 +239,29 @@ Solution:
 
 Output
 ```
+8 10 10 20
 ```
->answer: 
+>answer: `a`
 
 Solution: 
+So, I have written a visual representation of how this code works.
+```c
+struct sData {
+    union uData {
+        int a;
+        int b;
+    } c;
+    int d;
+} da = {10, 20};
+```
+First printf statement prints the size of da, which is 8, because da consist of union with two integer variable, compiler allots size of union as largest sizeof all the variable. So union size will be 4.
+then int d size will be 4. Total is 4 + 4 = 8.
+
+union is equal to 10. c.a = 10 & c.b = 10.
+
+da.c.a => 10\
+da.c.b => 10\
+da.d => 20
 
 ---
 ### 14.
@@ -233,10 +269,15 @@ Solution:
 
 Output
 ```
+6 7 7
 ```
->answer: 
+>answer: `c`
 
-Solution: 
+Solution: In the first statement, the value of x is decremented by 1 using the decrement operator (--) before its value is assigned to the variable y. So, after this statement, the value of x is 7 and y is also 7.
+
+In the second statement, the value of x is assigned to the variable z and then decremented by 1 using the post-decrement operator (--). So, after this statement, the value of x is 6 and z is 7.
+
+The final printf statement outputs the values of x, y, and z: 6 7 7
 
 ---
 ### 15.
@@ -244,9 +285,8 @@ Solution:
 
 Output
 ```
+Compilation error: expression must be a modifiable lvalue.
 ```
->answer: 
-
-Solution: 
+>answer: `d`
 
 ---
